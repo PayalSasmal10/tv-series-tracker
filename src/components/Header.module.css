@@ -27,8 +27,39 @@
     padding: 6px;
     border: none;
     margin-top: 8px;
-    margin-right: 16px;
+    margin-right: 25px;
     font-size: 17px;
+}
+
+.search {
+  border: 1px solid #ccc;
+  outline: none;
+  background-size: 22px;
+  background-position: 13px;
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+  padding: 25px;
+  transition: all 0.5s;
+}
+
+.search:hover {
+    width: 300px;
+}
+
+.btn {
+    float: right;
+    padding: 4px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 2px;
+    font-size: 17px;
+    transform: translateY(5%);
+    position: absolute;
+    top: 0%;
+    right: 25px;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 @media screen and (max-width: 600px) {
