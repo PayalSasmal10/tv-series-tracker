@@ -24,11 +24,23 @@
 
 .header input[type=text] {
     float: right;
-    padding: 6px;
+    padding: 5px;
     border: none;
     margin-top: 8px;
     margin-right: 25px;
     font-size: 17px;
+}
+
+.imput::placeholder{
+    background-color: #3b3737;
+}
+
+.input::placeholder {
+    color: transparent;
+}
+
+.input:focus{
+    outline: none;
 }
 
 .search {
@@ -53,14 +65,15 @@
     border: none;
     margin-top: 8px;
     margin-right: 2px;
-    font-size: 17px;
+    font-size: 20px;
     transform: translateY(5%);
     position: absolute;
-    top: 0%;
+    top: -0.2%;
     right: 25px;
     cursor: pointer;
     background-color: transparent;
 }
+
 
 @media screen and (max-width: 600px) {
     .header a, .header input[type=text] {
