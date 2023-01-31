@@ -4,11 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 
 const Header = () => {
     const [active, setActive] = useState(false);
-    const input_value = useRef(false);
+    const input_value = useRef();
 
     useEffect(() => {
-        if (active) input_value.current.value 
-    }, (active));
+        if (active) input_value.current.textContent="" ;
+    }, [active]);
 
     const searchButtonHandler = () => {
         setActive(!active);
@@ -18,7 +18,7 @@ const Header = () => {
         <div className={classes.header}>
             <a className={classes.home} href="#home">Home</a>
             <a href="#about">About</a>
-            <input className={active?classes.search:classes.input} ref={input_value} type="text" placeholder="Search the TV series"/>
+            <input className={active?classes.input:classes.search} ref={input_value} type="text" placeholder="Search the TV series"/>
             <button className={classes.btn} type="submit" onClick={searchButtonHandler}><BsSearch/></button>
         </div>
         

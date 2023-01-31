@@ -31,17 +31,21 @@
     font-size: 17px;
 }
 
-.imput::placeholder{
-    background-color: #3b3737;
-}
-
-.input::placeholder {
+::-webkit-input-placeholder{
     color: transparent;
 }
 
-.input:focus{
-    outline: none;
-}
+:-moz-placeholder { /* Firefox 18- */
+    color:transparent; 
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color:transparent; 
+ }
+ 
+ :-ms-input-placeholder {  
+    color:transparent;
+ }
 
 .search {
   border: 1px solid #ccc;
@@ -55,9 +59,13 @@
   transition: all 0.5s;
 }
 
-.search:hover {
-    width: 300px;
+.search::placeholder{
+    color: #3b3737;
 }
+
+/* .search:hover {
+    width: 300px;
+} */
 
 .btn {
     float: right;
