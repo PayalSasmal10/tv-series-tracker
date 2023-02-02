@@ -13,16 +13,19 @@ const AvailableSeries = () => {
   useEffect(() => {
     const fetchSeries = async () => {
       const response =  await fetch(
-        "https://api.tvmaze.com/shows/series.json"
+        "https://api.tvmaze.com/shows"
       );
 
       console.log("fettching details.....");
+      
     
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
 
       const responseData = await response.json();
+
+      // console.log(responseData);
 
       const loadedSeries = [];
 
@@ -32,9 +35,10 @@ const AvailableSeries = () => {
           name: responseData[key].name,
           year: responseData[key].premiered,
           network: responseData[key].network,
-          country: responseData[key].network.country.name,
         });
       }
+
+      // console.log(loadedSeries);
       setSerieses(loadedSeries);
       setIsLoading(false);
     };
@@ -45,6 +49,8 @@ const AvailableSeries = () => {
     });
   }, []);
 
+  
+
   if(isLoading){
     return(
       <p>Loading.....</p>
@@ -52,6 +58,15 @@ const AvailableSeries = () => {
     
   }
 
+  if(httpError){
+    return(
+      <section>
+        <p>{httpError}</p>
+      </section>
+    );
+  }
+
+  console.log(serieses);
   const seriesList = serieses.map((series) => {
     <SeriesItems>
       key={series.id}
@@ -59,13 +74,14 @@ const AvailableSeries = () => {
       name={series.name}
       year={series.year}
       network={series.network}
-      country={series.country}
     </SeriesItems>
   });
 
   return (
     <Card>
-      {seriesList}
+      <ul>
+        {seriesList}
+      </ul>
     </Card>
   );
   

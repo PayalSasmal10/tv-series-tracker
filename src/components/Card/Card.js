@@ -1,7 +1,7 @@
 
 const Card = (props) => {
     return (
-        <div></div>
+        <div>{props.children}</div>
     );
 };
 export default Card;
