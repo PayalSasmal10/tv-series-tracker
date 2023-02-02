@@ -34,7 +34,8 @@ const AvailableSeries = () => {
           id: key,
           name: responseData[key].name,
           year: responseData[key].premiered,
-          network: responseData[key].network
+          network: responseData[key].network,
+          image: responseData[key].image,
         });
       }
 
@@ -74,6 +75,7 @@ const AvailableSeries = () => {
       name={series.name}
       year={series.year}
       network={series.network}
+      image={series.image}
     />
   ));
 
