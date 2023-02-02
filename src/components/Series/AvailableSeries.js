@@ -34,7 +34,7 @@ const AvailableSeries = () => {
           id: key,
           name: responseData[key].name,
           year: responseData[key].premiered,
-          network: responseData[key].network,
+          network: responseData[key].network
         });
       }
 
@@ -67,15 +67,15 @@ const AvailableSeries = () => {
   }
 
   console.log(serieses);
-  const seriesList = serieses.map((series) => {
-    <SeriesItems>
+  const seriesList = serieses.map((series) => (
+    <SeriesItems
       key={series.id}
       id={series.id}
       name={series.name}
       year={series.year}
       network={series.network}
-    </SeriesItems>
-  });
+    />
+  ));
 
   return (
     <Card>
