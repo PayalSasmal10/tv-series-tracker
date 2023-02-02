@@ -1,0 +1,4 @@
+.seriesSection{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SeriesItems from "./SeriesItems";
 import Card from "../Card/Card";
+import classes from "./AvailableSeries.module.css";
 
 
 const AvailableSeries = () => {
@@ -80,11 +81,11 @@ const AvailableSeries = () => {
   ));
 
   return (
-    <Card>
-      <ul>
+      <section className={classes.seriesSection}>
         {seriesList}
-      </ul>
-    </Card>
+
+      </section>
+      
   );
   
 };

@@ -4,11 +4,13 @@
     border-radius: 5px;
     width: 20%;
     text-align: center;
+    display: block;
+    margin: 30px;
 }
 
 .img {
     border-radius: 5px 5px 0 0;
-    width: 100%;
+    max-width: 100%;
 }
 
 .card:hover {
