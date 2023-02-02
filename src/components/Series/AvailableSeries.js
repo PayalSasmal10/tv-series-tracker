@@ -6,6 +6,7 @@ import Card from "../Card/Card";
 const AvailableSeries = () => {
     const [serieses, setSerieses] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [httpError, setHttpError] = useState();
 
 
 
@@ -14,6 +15,8 @@ const AvailableSeries = () => {
       const response =  await fetch(
         "https://api.tvmaze.com/shows/series.json"
       );
+
+      console.log("fettching details.....");
     
       if (!response.ok) {
         throw new Error("Something went wrong!");
@@ -35,6 +38,11 @@ const AvailableSeries = () => {
       setSerieses(loadedSeries);
       setIsLoading(false);
     };
+
+    fetchSeries().catch((error) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    });
   }, []);
 
   if(isLoading){
