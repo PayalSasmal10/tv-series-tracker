@@ -4,72 +4,70 @@ import Card from "../Card/Card";
 import classes from "./AvailableSeries.module.css";
 
 
-const AvailableSeries = () => {
-    const [serieses, setSerieses] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [httpError, setHttpError] = useState();
+const AvailableSeries = (props) => {
+  //   const [serieses, setSerieses] = useState([]);
+  //   const [isLoading, setIsLoading] = useState(true);
+  //   const [httpError, setHttpError] = useState();
 
 
 
-  useEffect(() => {
-    const fetchSeries = async () => {
-      const response =  await fetch(
-        "https://api.tvmaze.com/shows"
-      );
-
-      console.log("fettching details.....");
+  // useEffect(() => {
+  //   const fetchSeries = async () => {
+  //     const response =  await fetch(
+  //       "https://api.tvmaze.com/shows"
+  //     );
       
     
-      if (!response.ok) {
-        throw new Error("Something went wrong!");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("Something went wrong!");
+  //     }
 
-      const responseData = await response.json();
+  //     const responseData = await response.json();
 
-      // console.log(responseData);
+  //     const loadedSeries = [];
 
-      const loadedSeries = [];
+  //     for(const key in responseData){
+  //       loadedSeries.push({
+  //         id: key,
+  //         name: responseData[key].name,
+  //         year: responseData[key].premiered,
+  //         network: responseData[key].network,
+  //         image: responseData[key].image,
+  //       });
+  //     }
 
-      for(const key in responseData){
-        loadedSeries.push({
-          id: key,
-          name: responseData[key].name,
-          year: responseData[key].premiered,
-          network: responseData[key].network,
-          image: responseData[key].image,
-        });
-      }
+  //     setSerieses(loadedSeries);
+  //     setIsLoading(false);
 
-      // console.log(loadedSeries);
-      setSerieses(loadedSeries);
-      setIsLoading(false);
-    };
+  //     loadedSeries.filter((val) => {
 
-    fetchSeries().catch((error) => {
-      setIsLoading(false);
-      setHttpError(error.message);
-    });
-  }, []);
+  //     });
+  //   };
+
+  //   fetchSeries().catch((error) => {
+  //     setIsLoading(false);
+  //     setHttpError(error.message);
+  //   });
+  // }, []);
 
   
 
-  if(isLoading){
-    return(
-      <p>Loading.....</p>
-    );
+  // if(isLoading){
+  //   return(
+  //     <p>Loading.....</p>
+  //   );
     
-  }
+  // }
 
-  if(httpError){
-    return(
-      <section>
-        <p>{httpError}</p>
-      </section>
-    );
-  }
+  // if(httpError){
+  //   return(
+  //     <section>
+  //       <p>{httpError}</p>
+  //     </section>
+  //   );
+  // }
 
-  console.log(serieses);
-  const seriesList = serieses.map((series) => (
+  const seriesList = props.serieses.map((series) => (
     <SeriesItems
       key={series.id}
       id={series.id}
