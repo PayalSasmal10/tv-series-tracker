@@ -8,6 +8,7 @@ function App() {
     const [serieses, setSerieses] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState();
+    const [filteredValue, setfilteredValue] = useState([]);
 
 
 
@@ -64,10 +65,11 @@ function App() {
     );
   }
 
+  console.log("from app js", filteredValue);
   return (
     <div className="App">
-      <Header serieses={serieses} />
-      <AvailableSeries serieses={serieses} />
+      <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
+      <AvailableSeries serieses={serieses} filteredValue={filteredValue} />
     </div>
   );
 }

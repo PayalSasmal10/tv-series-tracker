@@ -67,7 +67,7 @@ const AvailableSeries = (props) => {
   //   );
   // }
 
-  const seriesList = props.serieses.map((series) => (
+  const seriesList = props.filteredValue.map((series) => (
     <SeriesItems
       key={series.id}
       id={series.id}
