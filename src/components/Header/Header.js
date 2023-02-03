@@ -35,7 +35,7 @@ const Header = ({ serieses, setfilteredValue }) => {
       });
 
       setfilteredValue(searchedValue);
-  },[serieses])
+  },[serieses, searchTerm])
 
   return (
     <div className={classes.header}>
