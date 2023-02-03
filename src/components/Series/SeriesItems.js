@@ -1,7 +1,7 @@
 import classes from "./SeriesItems.module.css";
 
 const SeriesItems = (props) => {
-  const { name, year, network, image } = props;
+  const { name, year, network, image,externals } = props;
   return (
     <div className={classes.card}>
       <img src={image?.medium} className="" />
@@ -10,6 +10,7 @@ const SeriesItems = (props) => {
         <p>{year}</p>
         <p>{network?.name}</p>
         <p>{network?.country.name}</p>
+        <p>{externals?.thetvdb}</p>
       </div>
     </div>
   );

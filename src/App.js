@@ -34,6 +34,7 @@ function App() {
           year: responseData[key].premiered,
           network: responseData[key].network,
           image: responseData[key].image,
+          followers: responseData[key].externals,
         });
       }
 
