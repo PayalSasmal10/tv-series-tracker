@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import SeriesItems from "./SeriesItems";
-import Card from "../Card/Card";
 import classes from "./AvailableSeries.module.css";
 
 
