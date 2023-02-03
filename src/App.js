@@ -65,7 +65,6 @@ function App() {
     );
   }
 
-  console.log("from app js", filteredValue);
   return (
     <div className="App">
       <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
