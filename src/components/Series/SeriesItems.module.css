@@ -25,15 +25,21 @@
     border-top: 1px solid lightblue;
 }
 
-.firstRowItems, .secondRowItems{
-    float:left;
-    width: 50%
+.firstRowItems {
+    /* float:left;
+    width: 50% */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
 }
 
-.firstRowItems p{
-    border-right: 1px solid;
+.griditem{
+    border: 1px solid rgb(138, 135, 135);
+    padding: 10px;
+    text-align: center;
 }
-
-/* .secondRowItems {
-    border-bottom: 1px solid;
+/* p {
+padding: 10px;
+border: 1px solid black;
 } */
+

@@ -9,16 +9,22 @@ const SeriesItems = (props) => {
         <h3 className="">{name}</h3>
         <div className={classes.seriesitems}>
           <div className={classes.firstRowItems}>
-            <p>{year}</p>
-            <p>Year</p>
-            <p>{network?.name}</p>
-            <p>Network</p>
-          </div>
-          <div className={classes.secondRowItems}>
-            <p>{network?.country.name}</p>
-            <p>Country</p>
-            <p>{followers?.thetvdb}</p>
-            <p>Followers</p>
+            <div className={classes.griditem}>
+              {year}
+              <p>year</p>
+            </div>
+            <div className={classes.griditem}>
+              {network?.name}
+              <p>Network</p>
+            </div>
+            <div className={classes.griditem}>
+              {network?.country.name}
+              <p>Country</p>
+            </div>
+            <div className={classes.griditem}>
+              {followers?.thetvdb}
+              <p>Followers</p>
+            </div>
           </div>
         </div>
       </div>
