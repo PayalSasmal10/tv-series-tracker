@@ -20,3 +20,20 @@
 .container {
     padding: 2px 16px;
 }
+
+.seriesitems{
+    border-top: 1px solid lightblue;
+}
+
+.firstRowItems, .secondRowItems{
+    float:left;
+    width: 50%
+}
+
+.firstRowItems p{
+    border-right: 1px solid;
+}
+
+/* .secondRowItems {
+    border-bottom: 1px solid;
+} */

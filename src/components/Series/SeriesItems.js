@@ -10,11 +10,15 @@ const SeriesItems = (props) => {
         <div className={classes.seriesitems}>
           <div className={classes.firstRowItems}>
             <p>{year}</p>
+            <p>Year</p>
             <p>{network?.name}</p>
+            <p>Network</p>
           </div>
           <div className={classes.secondRowItems}>
             <p>{network?.country.name}</p>
+            <p>Country</p>
             <p>{followers?.thetvdb}</p>
+            <p>Followers</p>
           </div>
         </div>
       </div>
