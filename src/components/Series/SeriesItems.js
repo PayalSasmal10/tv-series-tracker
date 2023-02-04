@@ -4,6 +4,8 @@ import { FiMoreHorizontal } from "react-icons/fi";
 
 const SeriesItems = (props) => {
   const { name, year, network, image, followers } = props;
+  const fetch_year = new Date(year);
+  const only_year = fetch_year.getFullYear();
   return (
     <div className={classes.card}>
       <img src={image?.medium} />
@@ -16,12 +18,12 @@ const SeriesItems = (props) => {
               <p>Followers</p>
             </div>
             <div className={classes.griditem}>
-              {year}
+              {only_year}
               <p>Year</p>
             </div>
             <div className={`${classes.griditem} ${classes.griditem1}`}>
               <FiMoreHorizontal/>
-              <p>more info</p>
+              <p>More info</p>
             </div>
             <div className={classes.griditem}>
               {network?.name}
