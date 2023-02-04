@@ -9,8 +9,8 @@ const SeriesItems = (props) => {
   return (
     <div className={classes.card}>
       <img src={image?.medium} />
-      <div className={classes.container}>
-        <h3 className="">{name}</h3>
+      <div>
+        <h3 className={classes.name}>{name}</h3>
         <div className={classes.seriesitems}>
           <div className={classes.firstRowItems}>
           <div className={classes.griditem}>
