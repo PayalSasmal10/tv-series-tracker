@@ -29,11 +29,12 @@
     border-right: 1px solid lightblue;
     padding: 10px;
     text-align: center;
-    font-size: 10px;
+    font-size: 11px;
     min-width: 4rem;
     word-wrap: break-word;
     color: #A0C3D2;
-    box-shadow: 1px;
+    box-shadow: 1px lightblue;
+    
 }
 /* p {
 padding: 10px;
