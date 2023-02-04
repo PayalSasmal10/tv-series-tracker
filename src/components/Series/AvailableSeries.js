@@ -13,7 +13,7 @@ const AvailableSeries = (props) => {
       year={series.year}
       network={series.network}
       image={series.image}
-      followers={series.externals}
+      followers={series.followers}
     />
   ));
 
