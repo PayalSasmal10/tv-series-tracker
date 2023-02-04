@@ -17,9 +17,9 @@ const SeriesItems = (props) => {
             </div>
             <div className={classes.griditem}>
               {year}
-              <p>year</p>
+              <p>Year</p>
             </div>
-            <div className={classes.griditem}>
+            <div className={`${classes.griditem} ${classes.griditem1}`}>
               <FiMoreHorizontal/>
               <p>more info</p>
             </div>
@@ -28,12 +28,12 @@ const SeriesItems = (props) => {
               <p>Network</p>
             </div>
             <div className={classes.griditem}>
-              {network?.country.name}
+              {network?.country.code}
               <p>Country</p>
             </div>
-            <div className={classes.griditem}>
+            <div className={`${classes.griditem} ${classes.griditem1}`}>
               <BiLogInCircle/>
-              <p>Country</p>
+              <p>Login to follow</p>
             </div>
           </div>
         </div>
