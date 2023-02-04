@@ -17,20 +17,10 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2)
 }
 
-.container {
-    padding: 2px 16px;
-}
-
-/* .seriesitems{
-    border-top: 1px solid lightblue;
-} */
 
 .firstRowItems {
-    /* float:left;
-    width: 50% */
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
     
 }
 
@@ -40,6 +30,10 @@
     padding: 10px;
     text-align: center;
     font-size: 10px;
+    min-width: 4rem;
+    word-wrap: break-word;
+    color: #A0C3D2;
+    box-shadow: 1px;
 }
 /* p {
 padding: 10px;
