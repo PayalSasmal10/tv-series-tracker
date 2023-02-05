@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import AvailableSeries from "./components/Series/AvailableSeries";
 import { useEffect, useState } from "react";
+import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import RootLayout from "./components/Router/Root";
 
 function App() {
     const [serieses, setSerieses] = useState([]);
@@ -66,10 +68,23 @@ function App() {
     );
   }
 
+ const router = createBrowserRouter([
+    { 
+      path : '/', 
+      element: <RootLayout serieses={serieses} setfilteredValue={setfilteredValue} />,
+      children: [
+        { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue} />},
+      ],
+    },
+  ]);
+
   return (
     <div className="App">
-      <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
-      <AvailableSeries serieses={serieses} filteredValue={filteredValue} />
+       {/* <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
+       <AvailableSeries serieses={serieses} filteredValue={filteredValue} />  */}
+       <RouterProvider router={router}/>
+
+      
     </div>
   );
 }
