@@ -2,17 +2,44 @@ import classes from "./SeriesItems.module.css";
 import { BiLogInCircle } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useState } from "react";
+import ParticularShow from "../ParticularShow/ParticularShow";
 
 const SeriesItems = (props) => {
-  
+  const [selectedSeries, setSelectedSeries] = useState([]);
   const { id, name, year, network, image, followers } = props;
   const fetch_year = new Date(year);
   const only_year = fetch_year.getFullYear();
 
   const fetchParticularShow = async(id) => {
+    
+    if(id === 0){
+      id = 1;
+    }
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
 
-    console.log(response);
+    if(!response.ok){
+      throw new Error("Something went wrong");
+    }
+
+    const responseForSelectedData = await response.json();
+
+    const clickedSeries = [];
+
+    console.log("response", responseForSelectedData);
+
+    for(const key in responseForSelectedData){
+      clickedSeries.push({
+        id: key,
+        name:responseForSelectedData[key].name,
+        premiered:responseForSelectedData[key].premiered,
+        network:responseForSelectedData[key].network,
+      });
+    }
+
+    setSelectedSeries(clickedSeries);
+    console.log(selectedSeries);
+    <ParticularShow selectedSeries={selectedSeries} />
+
 
   };
   

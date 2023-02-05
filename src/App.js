@@ -31,7 +31,7 @@ function App() {
 
       for(const key in responseData){
         loadedSeries.push({
-          id: key + 1,
+          id: key,
           name: responseData[key].name,
           year: responseData[key].premiered,
           network: responseData[key].network,
