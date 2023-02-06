@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import viewParticularShow from "./ViewParticularShow";
+import ViewParticularShow from "./ViewParticularShow";
 
 const ParticularShow = ({ selectedSeries }) => {
   const selectedSeriesList = selectedSeries.map((particularSeries) => (
-    <viewParticularShow 
+    <ViewParticularShow 
        key={particularSeries.key} 
        id={particularSeries.id}
     //    name={particularSeries.name}

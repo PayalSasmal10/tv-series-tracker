@@ -5,6 +5,7 @@ import AvailableSeries from "./components/Series/AvailableSeries";
 import { useEffect, useState } from "react";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/Router/Root";
+import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
 
 function App() {
     const [serieses, setSerieses] = useState([]);
@@ -74,6 +75,7 @@ function App() {
       element: <RootLayout serieses={serieses} setfilteredValue={setfilteredValue} />,
       children: [
         { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue} />},
+        { path: '/details', element: <ViewParticularShow/>},
       ],
     },
   ]);
