@@ -1,6 +1,7 @@
 import classes from "./Header.module.css";
 import { BsSearch } from "react-icons/bs";
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ serieses, setfilteredValue }) => {
   const [active, setActive] = useState(false);
@@ -39,9 +40,9 @@ const Header = ({ serieses, setfilteredValue }) => {
 
   return (
     <div className={classes.header}>
-      <a className={classes.home} href="/">
+      <Link className={classes.home} to="/">
         Home
-      </a>
+      </Link>
       <a href="#about">About</a>
       <input
         className={active ? classes.input : classes.search}

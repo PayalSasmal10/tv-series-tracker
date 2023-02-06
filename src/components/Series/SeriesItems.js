@@ -2,11 +2,10 @@ import classes from "./SeriesItems.module.css";
 import { BiLogInCircle } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useState } from "react";
-import ParticularShow from "../ParticularShow/ParticularShow";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SeriesItems = (props) => {
-  const [selectedSeries, setSelectedSeries] = useState([]);
+  // const [selectedSeries, setSelectedSeries] = useState([]);
   const [httpErrors, setHttpErrors] = useState();
   const { id, name, year, network, image, followers } = props;
   const fetch_year = new Date(year);
@@ -14,10 +13,6 @@ const SeriesItems = (props) => {
   const navigate = useNavigate();
 
   const fetchParticularShow = async(id) => {
-    
-    if(id === 0){
-      id = 1;
-    }
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
 
     if(!response.ok){
@@ -26,31 +21,17 @@ const SeriesItems = (props) => {
 
     const responseForSelectedData = await response.json();
 
-    const clickedSeries = [];
-
-    console.log("response", responseForSelectedData);
-
-    for(const key in responseForSelectedData){
-      clickedSeries.push({
-        id: key,
-        name:responseForSelectedData.name,
-        premiered:responseForSelectedData.premiered,
-        network:responseForSelectedData.network,
-      });
-    }
-    setSelectedSeries(clickedSeries);
-    console.log(selectedSeries);
-    <ParticularShow selectedSeries={selectedSeries} />
-    navigate('/details');
+    props.setSelectedSeries(responseForSelectedData);
+    console.log(responseForSelectedData);
+    // <ParticularShow selectedSeries={selectedSeries} />
+    // navigate('/details');
 
   };
-
-  // fetchParticularShow().catch((error) => {
-  //   setHttpErrors(error.message);
-  // });
   
   return (
-    <div className={classes.card} onClick={() => fetchParticularShow(id)}>
+    <div className={classes.card}>
+      <Link to={`/details/${id}`} onClick={() => fetchParticularShow(id)} >
+      {/* <ParticularShow selectedSeries={selectedSeries} /> */}
       <img src={image?.medium} />
       <div>
         <h3 className={classes.name}>{name}</h3>
@@ -83,6 +64,7 @@ const SeriesItems = (props) => {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

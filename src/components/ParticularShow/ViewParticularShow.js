@@ -1,6 +1,7 @@
 
-const ViewParticularShow = (props) => {
-    const {id, name, premiered, network} = props;
+const ViewParticularShow = ({ selectedSeries }) => {
+    const {id, name, premiered, network} = selectedSeries;
+    console.log(id);
     return (
         <div>
             <span>Name: {name}</span>

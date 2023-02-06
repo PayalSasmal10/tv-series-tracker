@@ -12,6 +12,7 @@ function App() {
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState();
     const [filteredValue, setfilteredValue] = useState([]);
+    const [selectedSeries, setSelectedSeries] = useState([]);
 
 
 
@@ -74,11 +75,13 @@ function App() {
       path : '/', 
       element: <RootLayout serieses={serieses} setfilteredValue={setfilteredValue} />,
       children: [
-        { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue} />},
-        { path: '/details', element: <ViewParticularShow/>},
+        { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue} setSelectedSeries={setSelectedSeries} />},
+        { path: '/details/:id', element: <ViewParticularShow selectedSeries={selectedSeries} />},
       ],
     },
   ]);
+
+  console.log(selectedSeries);
 
   return (
     <div className="App">
