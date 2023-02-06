@@ -6,6 +6,7 @@ import ParticularShow from "../ParticularShow/ParticularShow";
 
 const SeriesItems = (props) => {
   const [selectedSeries, setSelectedSeries] = useState([]);
+  const [httpErrors, setHttpErrors] = useState();
   const { id, name, year, network, image, followers } = props;
   const fetch_year = new Date(year);
   const only_year = fetch_year.getFullYear();
@@ -30,18 +31,21 @@ const SeriesItems = (props) => {
     for(const key in responseForSelectedData){
       clickedSeries.push({
         id: key,
-        name:responseForSelectedData[key].name,
-        premiered:responseForSelectedData[key].premiered,
-        network:responseForSelectedData[key].network,
+        name:responseForSelectedData.name,
+        premiered:responseForSelectedData.premiered,
+        network:responseForSelectedData.network,
       });
     }
-
     setSelectedSeries(clickedSeries);
     console.log(selectedSeries);
     <ParticularShow selectedSeries={selectedSeries} />
 
 
   };
+
+  // fetchParticularShow().catch((error) => {
+  //   setHttpErrors(error.message);
+  // });
   
   return (
     <div className={classes.card} onClick={() => fetchParticularShow(id)}>
