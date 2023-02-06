@@ -39,7 +39,7 @@ const Header = ({ serieses, setfilteredValue }) => {
 
   return (
     <div className={classes.header}>
-      <a className={classes.home} href="#home">
+      <a className={classes.home} href="/">
         Home
       </a>
       <a href="#about">About</a>

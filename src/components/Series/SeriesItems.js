@@ -3,6 +3,7 @@ import { BiLogInCircle } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useState } from "react";
 import ParticularShow from "../ParticularShow/ParticularShow";
+import { useNavigate } from "react-router-dom";
 
 const SeriesItems = (props) => {
   const [selectedSeries, setSelectedSeries] = useState([]);
@@ -10,6 +11,7 @@ const SeriesItems = (props) => {
   const { id, name, year, network, image, followers } = props;
   const fetch_year = new Date(year);
   const only_year = fetch_year.getFullYear();
+  const navigate = useNavigate();
 
   const fetchParticularShow = async(id) => {
     
@@ -39,7 +41,7 @@ const SeriesItems = (props) => {
     setSelectedSeries(clickedSeries);
     console.log(selectedSeries);
     <ParticularShow selectedSeries={selectedSeries} />
-
+    navigate('/details');
 
   };
 
