@@ -18,6 +18,10 @@
     max-width: 100%;
 }
 
+.linkCss {
+    text-decoration: none;
+}
+
 .name {
     font-family: "Cursive", "Lucida console";
 }

@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const SeriesItems = (props) => {
-  // const [selectedSeries, setSelectedSeries] = useState([]);
   const [httpErrors, setHttpErrors] = useState();
   const { id, name, year, network, image, followers } = props;
   const fetch_year = new Date(year);
@@ -30,7 +29,7 @@ const SeriesItems = (props) => {
   
   return (
     <div className={classes.card}>
-      <Link to={`/details/${id}`} onClick={() => fetchParticularShow(id)} >
+      <Link to={`/details/${id}`} onClick={() => fetchParticularShow(id)} className={classes.linkCss}>
       {/* <ParticularShow selectedSeries={selectedSeries} /> */}
       <img src={image?.medium} />
       <div>
