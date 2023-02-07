@@ -21,10 +21,7 @@ const SeriesItems = (props) => {
     const responseForSelectedData = await response.json();
 
     props.setSelectedSeries(responseForSelectedData);
-    console.log(responseForSelectedData);
-    // <ParticularShow selectedSeries={selectedSeries} />
-    // navigate('/details');
-
+    
   };
   
   return (
