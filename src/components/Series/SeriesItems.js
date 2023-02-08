@@ -11,22 +11,22 @@ const SeriesItems = (props) => {
   const only_year = fetch_year.getFullYear();
   const navigate = useNavigate();
 
-  const fetchParticularShow = async(id) => {
-    const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  // const fetchParticularShow = async(id) => {
+  //   const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
 
-    if(!response.ok){
-      throw new Error("Something went wrong");
-    }
+  //   if(!response.ok){
+  //     throw new Error("Something went wrong");
+  //   }
 
-    const responseForSelectedData = await response.json();
+  //   const responseForSelectedData = await response.json();
 
-    props.setSelectedSeries(responseForSelectedData);
+  //   props.setSelectedSeries(responseForSelectedData);
     
-  };
+  // };
   
   return (
     <div className={classes.card}>
-      <Link to={`/details/${id}`} onClick={() => fetchParticularShow(id)} className={classes.linkCss}>
+      <Link to={`/details/${id}`} className={classes.linkCss}>
       {/* <ParticularShow selectedSeries={selectedSeries} /> */}
       <img src={image?.medium} />
       <div>

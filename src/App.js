@@ -75,13 +75,11 @@ function App() {
       path : '/', 
       element: <RootLayout serieses={serieses} setfilteredValue={setfilteredValue} />,
       children: [
-        { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue} setSelectedSeries={setSelectedSeries} />},
-        { path: '/details/:id', element: <ViewParticularShow selectedSeries={selectedSeries} />},
+        { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue}/>},
+        { path: '/details/:id', element: <ViewParticularShow selectedSeries={selectedSeries} setSelectedSeries={setSelectedSeries} />},
       ],
     },
   ]);
-
-  console.log(selectedSeries);
 
   return (
     <div className="App">
