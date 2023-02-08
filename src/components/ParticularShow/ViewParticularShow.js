@@ -28,8 +28,6 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
     }
   }, [seriesId]);
 
-  console.log(selectedSeries);
-
   return (
     <div>
       {/* <img src={image?.original} /> */}
