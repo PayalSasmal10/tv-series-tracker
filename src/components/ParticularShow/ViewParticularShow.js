@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
   const { name, language, premiered, network, image, status,runtime , genres} = selectedSeries;
-
+  const [isViewLoading, setIsViewLoading] = useState(true);
   const generLength = genres && genres.length;
 
   const {id: seriesId} = useParams();
@@ -18,8 +18,11 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
     const responseForSelectedData = await response.json();
 
     setSelectedSeries(responseForSelectedData);
+    setIsViewLoading(false);
     
   };
+
+  
 
   useEffect(() => {
     
@@ -27,6 +30,13 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
       fetchParticularShow(seriesId)
     }
   }, [seriesId]);
+
+  if(isViewLoading){
+    return(
+
+      <p>Loading</p>
+    );
+  }
 
   return (
     <div>
