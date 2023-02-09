@@ -47,7 +47,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
       <div className={classes.imgdiv}>
         <img className={classes.img} src={image?.medium} />
       </div>
-      <div>
+      <div className={classes.details}>
         <div>Name: {name}</div>
         <div>language: {language}</div>
         <div>Premiered: {premiered}</div>
@@ -64,7 +64,10 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
             </span>
           ))}
         </div>
+        <div>
+
         <div dangerouslySetInnerHTML={{ __html: summary }} />
+        </div>
       </div>
     </div>
   );
