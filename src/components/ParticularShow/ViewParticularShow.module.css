@@ -32,9 +32,16 @@
   
 }
 
+.details .genre {
+    font-size: 20px ;
+    font-weight: bold;
+
+}
 .focusdetails{
     margin : 20px;
 }
+
+
 
 /* .contents {
     

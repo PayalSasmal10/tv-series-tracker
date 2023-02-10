@@ -14,9 +14,9 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
     officialSite,
 
   } = selectedSeries;
-
-  // const official = officialSite.replace(/^http?:\/\//, '');
-  // console.log(official);
+  
+  // const official = test.replace(/^http?:\/\//, '');
+  console.log(officialSite);
   
   const [isViewLoading, setIsViewLoading] = useState(true);
   const generLength = genres && genres.length;
@@ -54,21 +54,21 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
       <div className={classes.details}>
         <br></br>
         <h1 className={classes.focusdetails}>Show Info</h1>
-        <div className={classes.focusdetails}>Network: <a href={network?.officialSite}>{network?.name}</a></div>
-        <div className={classes.focusdetails}>Schedule: {schedule?.days} at {schedule?.time}</div>
-        <div className={classes.focusdetails}>Country: {network?.country.name}</div>
-        <div className={classes.focusdetails}>Status: {status}</div>
-        <div className={classes.focusdetails}>Total Runtime: {runtime}m</div>
+        <div className={classes.focusdetails}><span className={classes.genre}>Network: </span><a href={network?.officialSite}>{network?.name}</a></div>
+        <div className={classes.focusdetails}><span className={classes.genre}>Schedule: </span>{schedule?.days} at {schedule?.time}( {runtime}m)</div>
+        <div className={classes.focusdetails}><span className={classes.genre}>Country: </span>{network?.country.name}</div>
+        <div className={classes.focusdetails}><span className={classes.genre}>Status: </span> {status}</div>
+        <div className={classes.focusdetails}><span className={classes.genre}>Total Runtime: </span> {runtime}m</div>
         <div className={classes.focusdetails}>
-          Genres:{" "}
+        <span className={classes.genre}>Genres: </span>{" "}
           {genres?.map((genre, idx) => (
-            <span>
+            <span >
               {genre}
-              {idx < generLength - 1 && " | "}
+              {idx <generLength - 1 && " | "}
             </span>
           ))}
         </div>
-        <div className={classes.focusdetails}>Official site : <a href={officialSite}>t</a></div>
+        <div className={classes.focusdetails}><span className={classes.genre}>Official site : </span> <a href={officialSite}>{network?.officialSite}</a></div>
         <br></br>
       </div>
       <div className={classes.contents}>
