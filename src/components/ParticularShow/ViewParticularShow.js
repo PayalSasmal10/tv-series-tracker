@@ -4,16 +4,19 @@ import classes from "./ViewParticularShow.module.css";
 
 const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
   const {
-    name,
-    language,
-    premiered,
     network,
     image,
     status,
     runtime,
     genres,
     summary,
+    schedule,
+    officialSite,
+
   } = selectedSeries;
+
+  const official = {officialSite};
+  
   const [isViewLoading, setIsViewLoading] = useState(true);
   const generLength = genres && genres.length;
 
@@ -50,9 +53,8 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
       <div className={classes.details}>
         <br></br>
         <h1 className={classes.focusdetails}>Show Info</h1>
-        <div className={classes.focusdetails}>Name: {name}</div>
-        <div className={classes.focusdetails}>Premiered: {premiered}</div>
         <div className={classes.focusdetails}>Network: <a href={network?.officialSite}>{network?.name}</a></div>
+        <div className={classes.focusdetails}>Schedule: {schedule?.days} at {schedule?.time}</div>
         <div className={classes.focusdetails}>Country: {network?.country.name}</div>
         <div className={classes.focusdetails}>Status: {status}</div>
         <div className={classes.focusdetails}>Total Runtime: {runtime}m</div>
@@ -65,9 +67,8 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
             </span>
           ))}
         </div>
-        <div>
-
-        </div><br></br>
+        <div className={classes.focusdetails}>Official site : <a href={officialSite}>t</a></div>
+        <br></br>
       </div>
       <div className={classes.contents}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
