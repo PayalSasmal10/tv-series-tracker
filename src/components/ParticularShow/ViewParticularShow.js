@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import  classes from "./ViewParticularShow.module.css";
+import classes from "./ViewParticularShow.module.css";
 
 const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
   const {
@@ -48,14 +48,15 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
         <img className={classes.img} src={image?.original} />
       </div>
       <div className={classes.details}>
-        <div>Name: {name}</div>
-        <div>language: {language}</div>
-        <div>Premiered: {premiered}</div>
-        <div>Network: {network?.name}</div>
-        <div>Country: {network?.country.name}</div>
-        <div>Status: {status}</div>
-        <div>Total Runtime: {runtime}m</div>
-        <div>
+        <br></br>
+        <div className={classes.focusdetails}>Name: {name}</div>
+        <div className={classes.focusdetails}>language: {language}</div>
+        <div className={classes.focusdetails}>Premiered: {premiered}</div>
+        <div className={classes.focusdetails}>Network: {network?.name}</div>
+        <div className={classes.focusdetails}>Country: {network?.country.name}</div>
+        <div className={classes.focusdetails}>Status: {status}</div>
+        <div className={classes.focusdetails}>Total Runtime: {runtime}m</div>
+        <div className={classes.focusdetails}>
           Genres:{" "}
           {genres?.map((genre, idx) => (
             <span>
@@ -63,11 +64,10 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
               {idx < generLength - 1 && ","}
             </span>
           ))}
-        </div>
-        <div>
-
+        </div><br></br>
+      </div>
+      <div className={classes.contents}>
         <p dangerouslySetInnerHTML={{ __html: summary }} />
-        </div>
       </div>
     </div>
   );

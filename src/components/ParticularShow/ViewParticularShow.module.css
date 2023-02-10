@@ -10,8 +10,8 @@
     cursor: pointer;
     text-decoration: none;
     position: relative;
-    left: 80px;
-
+    left: 100px;
+    margin-top: 50px;
 }
 .img {
     border-radius: 5px 5px 5px 5px;
@@ -19,7 +19,43 @@
 }
 
 .details{
-    display: absolute;
-
-    
+    box-shadow: 0 4px 30px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 20%;
+    height: 100%;
+    text-align: left;
+    position: relative;
+    left: 1100px;
+    bottom: 400px;
+    background-color: rgb(170, 183, 194);
+  
 }
+
+.focusdetails{
+    margin : 20px;
+}
+
+/* .contents {
+    
+    position: relative;
+    line-height: 1;
+    display: inline;
+    white-space: pre-wrap;
+
+}
+
+.contents:after {
+    content: "";
+    position: absolute;
+    top: -0.25em;
+    right: 100%;
+    bottom: -0.25em;
+    width: 0.25em;
+
+}
+
+.contents > p {
+    position: relative;
+    z-index: 1;
+} */
