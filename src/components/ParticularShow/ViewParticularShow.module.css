@@ -1,12 +1,12 @@
 
 .imgdiv{
-    box-shadow: 100px 80px 150px rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 80px 150px rgba(119, 91, 91, 0.15);
     transition: 0.3s;
     border-radius: 5px;
-    width: 15%;
+    width: 20%;
     text-align: center;
     display: block;
-    padding: 50px 0 0 0;
+    padding: 5px 0 0 0;
     cursor: pointer;
     text-decoration: none;
     position: relative;
@@ -19,7 +19,7 @@
 }
 
 .details{
-    box-shadow: 0 4px 30px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px 10px rgba(252, 168, 168, 0.2);
     transition: 0.3s;
     border-radius: 5px;
     width: 25%;
@@ -27,7 +27,7 @@
     /* text-align: left; */
     position: relative;
     left: 1000px;
-    bottom: 400px;
+    bottom: 422px;
     background-color: rgb(206, 225, 240);
   
 }
