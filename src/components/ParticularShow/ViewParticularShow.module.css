@@ -24,11 +24,11 @@
     border-radius: 5px;
     width: 25%;
     height: 100%;
-    text-align: left;
+    /* text-align: left; */
     position: relative;
     left: 1000px;
     bottom: 400px;
-    background-color: rgb(170, 183, 194);
+    background-color: rgb(206, 225, 240);
   
 }
 

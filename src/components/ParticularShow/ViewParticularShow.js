@@ -15,7 +15,8 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
 
   } = selectedSeries;
 
-  const official = {officialSite};
+  // const official = officialSite.replace(/^http?:\/\//, '');
+  // console.log(official);
   
   const [isViewLoading, setIsViewLoading] = useState(true);
   const generLength = genres && genres.length;
@@ -63,7 +64,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
           {genres?.map((genre, idx) => (
             <span>
               {genre}
-              {idx < generLength - 1 && ","}
+              {idx < generLength - 1 && " | "}
             </span>
           ))}
         </div>
