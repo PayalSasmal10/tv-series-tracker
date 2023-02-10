@@ -39,6 +39,7 @@ function App() {
           network: responseData[key].network,
           image: responseData[key].image,
           followers: responseData[key].externals,
+          language: responseData[key].language,
         });
       }
 

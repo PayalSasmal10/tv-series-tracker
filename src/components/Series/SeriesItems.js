@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const SeriesItems = (props) => {
-  const { id, name, year, network, image, followers } = props;
+  const { id, name, year, network, image, followers, language } = props;
   const fetch_year = new Date(year);
   const only_year = fetch_year.getFullYear();
 
@@ -26,8 +26,8 @@ const SeriesItems = (props) => {
               <p>Year</p>
             </div>
             <div className={`${classes.griditem} ${classes.griditem1}`}>
-              <FiMoreHorizontal />
-              <p>More info</p>
+              {language}
+              <p>Language</p>
             </div>
             <div className={classes.griditem}>
               {network?.name}
@@ -38,8 +38,8 @@ const SeriesItems = (props) => {
               <p>Country</p>
             </div>
             <div className={`${classes.griditem} ${classes.griditem1}`}>
-              <BiLogInCircle/>
-              <p>Login to follow</p>
+              <FiMoreHorizontal />
+              <p>More info</p>
             </div>
           </div>
         </div>

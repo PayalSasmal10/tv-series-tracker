@@ -49,10 +49,10 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
       </div>
       <div className={classes.details}>
         <br></br>
+        <h1 className={classes.focusdetails}>Show Info</h1>
         <div className={classes.focusdetails}>Name: {name}</div>
-        <div className={classes.focusdetails}>language: {language}</div>
         <div className={classes.focusdetails}>Premiered: {premiered}</div>
-        <div className={classes.focusdetails}>Network: {network?.name}</div>
+        <div className={classes.focusdetails}>Network: <a href={network?.officialSite}>{network?.name}</a></div>
         <div className={classes.focusdetails}>Country: {network?.country.name}</div>
         <div className={classes.focusdetails}>Status: {status}</div>
         <div className={classes.focusdetails}>Total Runtime: {runtime}m</div>
@@ -64,6 +64,9 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
               {idx < generLength - 1 && ","}
             </span>
           ))}
+        </div>
+        <div>
+
         </div><br></br>
       </div>
       <div className={classes.contents}>

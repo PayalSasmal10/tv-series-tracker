@@ -14,6 +14,7 @@ const AvailableSeries = (props) => {
       network={series.network}
       image={series.image}
       followers={series.followers}
+      language={series.language}
       setSelectedSeries={props.setSelectedSeries}
     />
   ));
