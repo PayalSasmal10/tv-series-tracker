@@ -41,7 +41,6 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
   useEffect(() => {
     if (seriesId) {
       fetchParticularShow(seriesId);
-      setIsViewLoading(false);
     }
   }, [seriesId]);
 
