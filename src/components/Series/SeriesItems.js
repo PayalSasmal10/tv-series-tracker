@@ -3,6 +3,7 @@ import { BiLogInCircle } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const SeriesItems = (props) => {
   const { id, name, year, network, image, followers, language } = props;
@@ -46,6 +47,7 @@ const SeriesItems = (props) => {
       </div>
       </Link>
     </div>
+    
   );
 };
 

@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/Router/Root";
 import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
+import ReactPaginate from "react-paginate";
+
 
 function App() {
     const [serieses, setSerieses] = useState([]);
@@ -13,6 +15,7 @@ function App() {
     const [httpError, setHttpError] = useState();
     const [filteredValue, setfilteredValue] = useState([]);
     const [selectedSeries, setSelectedSeries] = useState([]);
+    const [items, setItems] = useState([]);
 
 
 
@@ -82,12 +85,36 @@ function App() {
     },
   ]);
 
+  const handlePagination = (data) => {
+
+    console.log(data);
+
+  };
+
   return (
     <div className="App">
        {/* <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
        <AvailableSeries serieses={serieses} filteredValue={filteredValue} />  */}
-       <RouterProvider router={router}/>
-
+       {/* <RouterProvider router={router}/> */}
+       <ReactPaginate 
+        previousLabel={'<<'}
+        nextLabel={'>>'}
+        breakLabel={'...'}
+        pageCount={50}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={3}
+        onPageChange={handlePagination}
+        containerClassName={'pagination justify-content-center'}
+        pageClassName={'page-item'}
+        pageLinkClassName={'page-link'}
+        previousClassName={'page-item'}
+        previousLinkClassName={'page-link'}
+        nextClassName={'page-item'}
+        nextLinkClassName={'page-link'}
+        breakClassName={'page-item'}
+        breakLinkClassName={'page-link'}
+        activeClassName={'active'}
+       />
       
     </div>
   );
