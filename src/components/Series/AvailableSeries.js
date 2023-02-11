@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
 import SeriesItems from "./SeriesItems";
 import classes from "./AvailableSeries.module.css";
+import Pagination from "../Pagination/Pagination";
+import { useState } from "react";
 
 
 const AvailableSeries = (props) => {
+  const [currentPages, setCurrentPages] = useState();
   
   const seriesList = props.filteredValue.map((series) => (
     <SeriesItems
@@ -19,9 +21,17 @@ const AvailableSeries = (props) => {
     />
   ));
 
+  const handlePagination = (event) => {
+    let currentPage = event.selected + 1
+    console.log(currentPage);
+    // return currentPage;
+    setCurrentPages(currentPage);
+}
+
   return (
       <section className={classes.seriesSection}>
         {seriesList}
+        <Pagination itemsPerPage={props.itemsPerPage} totalItems={props.totalItems} handlePagination={currentPages}/>
       </section>
       
   );

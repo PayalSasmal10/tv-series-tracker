@@ -1,31 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Header/Header";
 import AvailableSeries from "./components/Series/AvailableSeries";
 import { useEffect, useState } from "react";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/Router/Root";
 import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
-import ReactPaginate from "react-paginate";
 
 
+const itemsPerPage = 12;
 function App() {
-    const [serieses, setSerieses] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [httpError, setHttpError] = useState();
-    const [filteredValue, setfilteredValue] = useState([]);
-    const [selectedSeries, setSelectedSeries] = useState([]);
-    const [items, setItems] = useState([]);
-
-
+  const [serieses, setSerieses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
+  const [filteredValue, setfilteredValue] = useState([]);
+  const [selectedSeries, setSelectedSeries] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchSeries = async () => {
-      const response =  await fetch(
-        "https://api.tvmaze.com/shows"
-      );
-      
-    
+      const response = await fetch("https://api.tvmaze.com/shows");
+
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
@@ -34,9 +28,9 @@ function App() {
 
       const loadedSeries = [];
 
-      for(const key in responseData){
+      for (const key in responseData) {
         loadedSeries.push({
-          id: +key+1,
+          id: +key + 1,
           name: responseData[key].name,
           year: responseData[key].premiered,
           network: responseData[key].network,
@@ -48,7 +42,6 @@ function App() {
 
       setSerieses(loadedSeries);
       setIsLoading(false);
-
     };
 
     fetchSeries().catch((error) => {
@@ -57,65 +50,74 @@ function App() {
     });
   }, []);
 
-  
-
-  if(isLoading){
-    return(
-      <p>Loading.....</p>
-    );
-    
+  if (isLoading) {
+    return <p>Loading.....</p>;
   }
 
-  if(httpError){
-    return(
+  if (httpError) {
+    return (
       <section>
         <p>{httpError}</p>
       </section>
     );
   }
 
- const router = createBrowserRouter([
-    { 
-      path : '/', 
-      element: <RootLayout serieses={serieses} setfilteredValue={setfilteredValue} />,
+  // Get current items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = serieses.slice(indexOfFirstItem, indexOfLastItem);
+
+  // change page
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <RootLayout
+          serieses={currentItems}
+          setfilteredValue={setfilteredValue}
+        />
+      ),
       children: [
-        { path: '/', element: <AvailableSeries serieses={serieses} filteredValue={filteredValue}/>},
-        { path: '/details/:id', element: <ViewParticularShow selectedSeries={selectedSeries} setSelectedSeries={setSelectedSeries} />},
+        {
+          path: "/",
+          element: (
+            <AvailableSeries
+              serieses={currentItems}
+              filteredValue={filteredValue}
+              itemsPerPage={itemsPerPage}
+              totalItems={serieses.length}
+            />
+          ),
+        },
+        {
+          path: "/details/:id",
+          element: (
+            <ViewParticularShow
+              selectedSeries={selectedSeries}
+              setSelectedSeries={setSelectedSeries}
+            />
+          ),
+        },
       ],
     },
   ]);
 
-  const handlePagination = (data) => {
-
-    console.log(data);
-
-  };
+  // const fetchPage = async (currentPage) => {
+  //   const res = await fetch(`https://api.tvmaze.com/shows?_page=${currentPage}&_limit=12`);
+  //   const data = await res.json();
+  //   return data;
+  // };
 
   return (
     <div className="App">
-       {/* <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
+      {/* <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
        <AvailableSeries serieses={serieses} filteredValue={filteredValue} />  */}
-       {/* <RouterProvider router={router}/> */}
-       <ReactPaginate 
-        previousLabel={'<<'}
-        nextLabel={'>>'}
-        breakLabel={'...'}
-        pageCount={50}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={3}
-        onPageChange={handlePagination}
-        containerClassName={'pagination justify-content-center'}
-        pageClassName={'page-item'}
-        pageLinkClassName={'page-link'}
-        previousClassName={'page-item'}
-        previousLinkClassName={'page-link'}
-        nextClassName={'page-item'}
-        nextLinkClassName={'page-link'}
-        breakClassName={'page-item'}
-        breakLinkClassName={'page-link'}
-        activeClassName={'active'}
-       />
-      
+      <div>
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }

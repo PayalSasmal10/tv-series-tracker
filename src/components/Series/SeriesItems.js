@@ -1,9 +1,7 @@
 import classes from "./SeriesItems.module.css";
-import { BiLogInCircle } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ReactPaginate from "react-paginate";
+
 
 const SeriesItems = (props) => {
   const { id, name, year, network, image, followers, language } = props;
@@ -11,7 +9,7 @@ const SeriesItems = (props) => {
   const only_year = fetch_year.getFullYear();
 
   return (
-    <div className={classes.card}>
+    <div className={classes.card} >
       <Link to={`/details/${id}`} className={classes.linkCss}>
       <img src={image?.medium} />
       <div>
