@@ -45,7 +45,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
     }
   }, [seriesId]);
 
-  if (!isViewLoading) {
+  if (isViewLoading) {
     return <div className={classes.ring}>Loading</div>
   }
 
