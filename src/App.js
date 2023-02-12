@@ -67,10 +67,7 @@ function App() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = serieses.slice(indexOfFirstItem, indexOfLastItem);
 
-  // change page
-  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-
+  //Router creation
   const router = createBrowserRouter([
     {
       path: "/",
@@ -106,16 +103,8 @@ function App() {
     },
   ]);
 
-  // const fetchPage = async (currentPage) => {
-  //   const res = await fetch(`https://api.tvmaze.com/shows?_page=${currentPage}&_limit=12`);
-  //   const data = await res.json();
-  //   return data;
-  // };
-
   return (
     <div className="App">
-      {/* <Header serieses={serieses} setfilteredValue={setfilteredValue}/>
-       <AvailableSeries serieses={serieses} filteredValue={filteredValue} />  */}
       <div>
         <RouterProvider router={router} />
       </div>

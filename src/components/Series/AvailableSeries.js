@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const AvailableSeries = (props) => {
-  // const [currentPages, setCurrentPages] = useState(0);
+
   
   const seriesList = props.filteredValue.map((series) => (
     <SeriesItems
@@ -24,7 +24,6 @@ const AvailableSeries = (props) => {
   const handlePagination = (event) => {
     let currentPge = event.selected + 1
     console.log(currentPge);
-    // return currentPage;
     props.setCurrentPage(currentPge);
     
 }

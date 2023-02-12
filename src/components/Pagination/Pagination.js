@@ -1,29 +1,6 @@
 import ReactPaginate from "react-paginate";
 
 const Pagination = ({itemsPerPage, totalItems, handlePagination}) => {
-    // let currentPage = 0
-    // const pageNumbers = [];
-
-    // for(let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++){
-    //     pageNumbers.push(i);
-    //     // console.log(pageNumbers);
-    // }
-
-    
-    // console.log("handlePagination", handlePagination)
-    
-    // console.log("after:", currentPage);
-
-    // const numbers = pageNumbers.map((number) => {
-    //     // console.log(number);
-    //     return (
-    //         {number}
-            
-    //         );
-
-    // });
-
-    // console.log(itemsPerPage);
     return (
         <ReactPaginate 
         previousLabel={'<<'}

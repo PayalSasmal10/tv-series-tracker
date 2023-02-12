@@ -17,8 +17,6 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
 
   } = selectedSeries;
   
-  // const official = test.replace(/^http?:\/\//, '');
-  console.log(officialSite);
   
   const [isViewLoading, setIsViewLoading] = useState(true);
   const generLength = genres && genres.length;
@@ -55,7 +53,6 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
         <p dangerouslySetInnerHTML={{ __html: summary }} />
       </div>
       <div className={classes.details_sub}>
-        {/* <br></br> */}
         <h1 className={classes.focusdetails}>Show Info</h1>
         <div className={classes.focusdetails}><span className={classes.genre}>Network: </span><a href={network?.officialSite}>{network?.name}</a></div>
         <div className={classes.focusdetails}><span className={classes.genre}>Schedule: </span>{schedule?.days} at {schedule?.time} ({runtime}m)</div>
