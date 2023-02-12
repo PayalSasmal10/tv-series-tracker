@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const AvailableSeries = (props) => {
-  const [currentPages, setCurrentPages] = useState();
+  // const [currentPages, setCurrentPages] = useState(0);
   
   const seriesList = props.filteredValue.map((series) => (
     <SeriesItems
@@ -22,16 +22,17 @@ const AvailableSeries = (props) => {
   ));
 
   const handlePagination = (event) => {
-    let currentPage = event.selected + 1
-    console.log(currentPage);
+    let currentPge = event.selected + 1
+    console.log(currentPge);
     // return currentPage;
-    setCurrentPages(currentPage);
+    props.setCurrentPage(currentPge);
+    
 }
 
   return (
       <section className={classes.seriesSection}>
         {seriesList}
-        <Pagination itemsPerPage={props.itemsPerPage} totalItems={props.totalItems} handlePagination={currentPages}/>
+        <Pagination itemsPerPage={props.itemsPerPage} totalItems={props.totalItems} handlePagination={handlePagination}/>
       </section>
       
   );

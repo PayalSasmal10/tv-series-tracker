@@ -89,6 +89,7 @@ function App() {
               filteredValue={filteredValue}
               itemsPerPage={itemsPerPage}
               totalItems={serieses.length}
+              setCurrentPage={setCurrentPage}
             />
           ),
         },
