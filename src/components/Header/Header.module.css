@@ -1,7 +1,7 @@
 .header {
     overflow: hidden;
     background-color: #3b3737;
-    width: 100vw;
+    width: 100%;
     height: 50%;
 }
 
@@ -30,7 +30,7 @@
     border: none;
     margin-top: 8px;
     margin-right: 25px;
-    font-size: 17px;
+    font-size: 10px;
 }
 
 .input:focus::placeholder{
@@ -65,7 +65,7 @@
     transform: translateY(5%);
     position: absolute;
     top: -1%;
-    right: 15px;
+    right: 25px;
     cursor: pointer;
     background-color: transparent;
 }

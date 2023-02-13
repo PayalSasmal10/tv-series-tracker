@@ -68,7 +68,7 @@ function App() {
           path: "/",
           element: (
             <AvailableSeries
-              serieses={currentItems}
+              serieses={serieses}
               filteredValue={filteredValue}
               itemsPerPage={itemsPerPage}
               totalItems={serieses.length}

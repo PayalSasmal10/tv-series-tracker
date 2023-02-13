@@ -18,8 +18,6 @@ const Header = ({ serieses, setfilteredValue }) => {
 
   const searchHandler = (event) => {
     setSearchTerm(event.target.value);
-
-    console.log("testing search");
   };
 
 
@@ -32,7 +30,6 @@ const Header = ({ serieses, setfilteredValue }) => {
         ) {
           return val;
         }
-        console.log("am I going");
       });
 
       setfilteredValue(searchedValue);
