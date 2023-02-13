@@ -55,7 +55,7 @@ const Header = ({ serieses, setfilteredValue }) => {
         type="submit"
         onClick={searchButtonHandler}
       >
-        <BsSearch />
+        <a className={classes.searchIcon}><BsSearch /> </a>
       </button>
     </div>
   );

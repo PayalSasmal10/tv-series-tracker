@@ -69,8 +69,8 @@
     font-size: 20px;
     transform: translateY(5%);
     position: absolute;
-    top: -1%;
-    right: 25px;
+    top: -2%;
+    right: 12px;
     cursor: pointer;
     background-color: transparent;
 }
