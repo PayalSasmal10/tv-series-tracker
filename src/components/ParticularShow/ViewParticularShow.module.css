@@ -85,7 +85,7 @@
 /* Image setup */
 .imgCard {
   border-radius: 5px;
-  width: 92vw;
+  width: 30%;
   height: 55vh; 
   text-align: center;
   display: block;
@@ -99,6 +99,7 @@
 .img {
   border-radius: 5px 5px 5px 5px;
   height: 55vh;
+  /* width: 20vw; */
 }
 
 .details{    
