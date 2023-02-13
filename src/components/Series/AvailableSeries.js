@@ -12,11 +12,12 @@ const AvailableSeries = (props) => {
       key={series.id}
       id={series.id}
       name={series.name}
-      year={series.year}
+      year={series.premiered}
       network={series.network}
       image={series.image}
-      followers={series.followers}
+      followers={series.externals}
       language={series.language}
+      rating={series.rating}
       setSelectedSeries={props.setSelectedSeries}
     />
   ));

@@ -2,6 +2,7 @@ import classes from "./Header.module.css";
 import { BsSearch } from "react-icons/bs";
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { MdDarkMode } from "react-icons/md";
 
 const Header = ({ serieses, setfilteredValue }) => {
   const [active, setActive] = useState(false);
@@ -41,6 +42,7 @@ const Header = ({ serieses, setfilteredValue }) => {
         Home
       </Link>
       <a href="#about">About</a>
+      <a className={classes.mode}> <MdDarkMode /></a>
       <input
         className={active ? classes.input : classes.search}
         ref={input_value}
