@@ -26,21 +26,7 @@ function App() {
 
       const responseData = await response.json();
 
-      const loadedSeries = [];
-
-      for (const key in responseData) {
-        loadedSeries.push({
-          id: +key + 1,
-          name: responseData[key].name,
-          year: responseData[key].premiered,
-          network: responseData[key].network,
-          image: responseData[key].image,
-          followers: responseData[key].externals,
-          language: responseData[key].language,
-        });
-      }
-
-      setSerieses(loadedSeries);
+      setSerieses(responseData);
       setIsLoading(false);
     };
 
