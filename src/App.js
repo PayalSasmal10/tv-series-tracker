@@ -15,6 +15,9 @@ function App() {
   const [filteredValue, setfilteredValue] = useState([]);
   const [selectedSeries, setSelectedSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [theme, setTheme] = useState("dark");
+
+  console.log(theme);
 
   useEffect(() => {
     const fetchSeries = async () => {
@@ -61,6 +64,8 @@ function App() {
         <RootLayout
           serieses={currentItems}
           setfilteredValue={setfilteredValue}
+          setTheme={setTheme}
+          theme={theme}
         />
       ),
       children: [
@@ -73,6 +78,7 @@ function App() {
               itemsPerPage={itemsPerPage}
               totalItems={serieses.length}
               setCurrentPage={setCurrentPage}
+              theme={theme}
             />
           ),
         },
@@ -90,7 +96,7 @@ function App() {
   ]);
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <div>
         <RouterProvider router={router} />
       </div>

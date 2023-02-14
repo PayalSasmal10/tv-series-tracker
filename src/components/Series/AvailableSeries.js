@@ -19,6 +19,7 @@ const AvailableSeries = (props) => {
       language={series.language}
       rating={series.rating}
       setSelectedSeries={props.setSelectedSeries}
+      theme={props.theme}
     />
   ));
 
