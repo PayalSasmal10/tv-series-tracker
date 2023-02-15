@@ -15,6 +15,8 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
 
   // console.log(active);
 
+  const themeClass = theme === "dark" ? classes.whiteIcon : classes.darkIcon;
+
   const searchButtonHandler = () => {
     setActive(!active);
   };
@@ -64,7 +66,7 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
         type="submit"
         onClick={searchButtonHandler}
       >
-        <a className={`${theme} === 'dark' ? ${classes.whiteIcon} : ${classes.darkIcon} `}><BsSearch /> </a>
+      <BsSearch />
       </button>
     </div>
   );

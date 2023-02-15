@@ -36,7 +36,7 @@
     border: none;
     margin-top: 8px;
     margin-right: 25px;
-    font-size: 10px;
+    font-size: 19px;
 }
 
 .input:focus::placeholder{
@@ -69,15 +69,11 @@
     margin-right: 2px;
     font-size: 20px;
     transform: translateY(5%);
-    position: absolute;
-    top: -2%;
-    right: 12px;
+    position: fixed;
+    top: 0%;
+    right: 25px;
     cursor: pointer;
     background-color: transparent;
-}
-
-.whiteIcon {
-    color: black;
 }
 
 @media screen and (max-width: 600px) {
