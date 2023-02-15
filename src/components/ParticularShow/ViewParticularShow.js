@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import classes from "./ViewParticularShow.module.css";
 
-const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
+const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
   const {
     network,
     image,
@@ -45,7 +45,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries }) => {
 
   return (
     <div className={classes.details}>
-      <div className={classes.imgCard}>
+      <div className={` ${classes.imgCard} ${theme} === "dark" ? ${classes.darkImgCard} : ${classes.lightImgCard}`}>
         <img className={classes.img} src={image?.original} />
       </div>
       <div className={classes.focusdetails}>

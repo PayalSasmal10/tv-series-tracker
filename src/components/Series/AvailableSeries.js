@@ -1,8 +1,6 @@
 import SeriesItems from "./SeriesItems";
 import classes from "./AvailableSeries.module.css";
 import Pagination from "../Pagination/Pagination";
-import { useState } from "react";
-
 
 const AvailableSeries = (props) => {
 
@@ -31,11 +29,12 @@ const AvailableSeries = (props) => {
 }
 
   return (
+    <>
       <section className={classes.seriesSection}>
         {seriesList}
-        <Pagination itemsPerPage={props.itemsPerPage} totalItems={props.totalItems} handlePagination={handlePagination}/>
       </section>
-      
+      <Pagination itemsPerPage={props.itemsPerPage} totalItems={props.totalItems} handlePagination={handlePagination}/>
+    </>
   );
   
 };

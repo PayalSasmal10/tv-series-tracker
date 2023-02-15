@@ -18,6 +18,7 @@
 .mode {
     color: white;
     font-size: large;
+    cursor: pointer;
 }
 
 .header a:hover {
@@ -75,6 +76,9 @@
     background-color: transparent;
 }
 
+.whiteIcon {
+    color: black;
+}
 
 @media screen and (max-width: 600px) {
     .header a, .header input[type=text] {

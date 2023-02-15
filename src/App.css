@@ -12,18 +12,14 @@
 }
 
 .App.light a{
-  color: #000 !important;
+  color: #000;
 }
 
 .App.dark a{
-  color: #f3f8fa !important;
-}
-
-.App.dark p {
   color: #f3f8fa;
 }
 
-.App.dark .details_sub {
+.App.dark p {
   color: #f3f8fa;
 }
 
@@ -31,6 +27,6 @@
   color: #000 !important;
 }
 
-.App.light .details_sub {
+/* .App.light .details_sub {
   color: #f3f8fa !important;
-}
+} */

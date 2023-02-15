@@ -9,9 +9,12 @@ const SeriesItems = (props) => {
   const only_year = fetch_year.getFullYear();
 
   // console.log(theme);
+  const themeClass = theme === "dark" ? classes.darkCard : classes.lightCard;
+
+  console.log(themeClass)
 
   return (
-    <div className={`${classes.card} ${classes.theme}`} >
+    <div className={`${classes.card} ${themeClass}`} >
       <Link to={`/details/${id}`} className={classes.linkCss} >
       <img src={image?.medium} />
       <div>

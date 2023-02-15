@@ -9,9 +9,9 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const input_value = useRef();
 
-  useEffect(() => {
-    if (active) input_value.current.textContent = "";
-  }, [active]);
+  // useEffect(() => {
+  //   if (active) input_value.current.textContent = "";
+  // }, [active]);
 
   // console.log(active);
 
@@ -28,14 +28,12 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
     const searchedValue = serieses.filter((val) => {
       if (searchTerm === "") {
         return val;
-      } else if (
-        val.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
-      ) {
-        return val;
+      } else if (val.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())){
+          return val;
       }
     });
     setfilteredValue(searchedValue);
-  },[serieses, searchTerm])
+  },[searchTerm])
 
   const themeHandler = () => {
     if (theme === "light"){
@@ -66,7 +64,7 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
         type="submit"
         onClick={searchButtonHandler}
       >
-        <a className={classes.searchIcon}><BsSearch /> </a>
+        <a className={`${theme} === 'dark' ? ${classes.whiteIcon} : ${classes.darkIcon} `}><BsSearch /> </a>
       </button>
     </div>
   );
