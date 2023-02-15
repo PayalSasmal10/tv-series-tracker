@@ -88,6 +88,7 @@ function App() {
             <ViewParticularShow
               selectedSeries={selectedSeries}
               setSelectedSeries={setSelectedSeries}
+              
             />
           ),
         },

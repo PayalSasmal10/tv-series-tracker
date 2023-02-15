@@ -27,6 +27,11 @@
   color: #000 !important;
 }
 
+.page-link {
+  color: #f3f8fa !important;
+  background-color: #F99417 !important;
+}
+
 /* .App.light .details_sub {
   color: #f3f8fa !important;
 } */

@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 
-const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
+const Header = ({ serieses, setfilteredValue, setTheme, theme, activated, setActivated}) => {
   const [active, setActive] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const input_value = useRef();
@@ -15,7 +15,7 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
 
   // console.log(active);
 
-  const themeClass = theme === "dark" ? classes.whiteIcon : classes.darkIcon;
+
 
   const searchButtonHandler = () => {
     setActive(!active);
@@ -25,6 +25,7 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
     setSearchTerm(event.target.value);
   };
 
+  
 
   useEffect(() => {
     const searchedValue = serieses.filter((val) => {
@@ -35,7 +36,9 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
       }
     });
     setfilteredValue(searchedValue);
-  },[searchTerm])
+  },[searchTerm, serieses])
+
+  console.log("setActivated", activated);
 
   const themeHandler = () => {
     if (theme === "light"){

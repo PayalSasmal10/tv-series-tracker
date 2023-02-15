@@ -11,7 +11,6 @@ const SeriesItems = (props) => {
   // console.log(theme);
   const themeClass = theme === "dark" ? classes.darkCard : classes.lightCard;
 
-  console.log(themeClass)
 
   return (
     <div className={`${classes.card} ${themeClass}`} >

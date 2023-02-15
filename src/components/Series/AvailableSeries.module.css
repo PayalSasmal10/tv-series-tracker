@@ -1,7 +1,14 @@
 .seriesSection{
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content:space-around;
     /* background-color: #202124; */
 }
 
+.paginationSection {
+    margin-bottom: 0;
+}
+
+.paginationSection a {
+    color: blue;
+}

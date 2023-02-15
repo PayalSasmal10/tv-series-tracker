@@ -4,7 +4,7 @@ import Pagination from "../Pagination/Pagination";
 
 const AvailableSeries = (props) => {
 
-  
+  console.log("props", props.activated);
   const seriesList = props.filteredValue.map((series) => (
     <SeriesItems
       key={series.id}
@@ -33,9 +33,13 @@ const AvailableSeries = (props) => {
       <section className={classes.seriesSection}>
         {seriesList}
       </section>
-      <Pagination itemsPerPage={props.itemsPerPage} totalItems={props.totalItems} handlePagination={handlePagination}/>
+      <Pagination 
+        itemsPerPage={props.itemsPerPage} 
+        totalItems={props.totalItems} 
+        handlePagination={handlePagination}
+        className={classes.paginationSection}
+      />
     </>
   );
-  
 };
 export default AvailableSeries;
