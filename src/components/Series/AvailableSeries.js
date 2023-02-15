@@ -23,7 +23,6 @@ const AvailableSeries = (props) => {
 
   const handlePagination = (event) => {
     let currentPge = event.selected + 1
-    console.log(currentPge);
     props.setCurrentPage(currentPge);
     
 }

@@ -38,7 +38,6 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme, activated, setAct
     setfilteredValue(searchedValue);
   },[searchTerm, serieses])
 
-  console.log("setActivated", activated);
 
   const themeHandler = () => {
     if (theme === "light"){

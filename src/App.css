@@ -5,14 +5,17 @@
 .App.light {
   background-color: #fff;
 }
+.App.light a{
+  color: #000;
+}
+
+.App.light p{
+  color: #000 !important;
+}
 
 .App.dark {
   background-color: #202124;
   color: #f3f8fa !important;
-}
-
-.App.light a{
-  color: #000;
 }
 
 .App.dark a{
@@ -23,15 +26,10 @@
   color: #f3f8fa;
 }
 
-.App.light p{
-  color: #000 !important;
-}
-
+/* .App.light a {
+  color: #f3f8fa !important;
+} */
 .page-link {
   color: #f3f8fa !important;
   background-color: #F99417 !important;
 }
-
-/* .App.light .details_sub {
-  color: #f3f8fa !important;
-} */

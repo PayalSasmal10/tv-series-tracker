@@ -69,7 +69,7 @@
     margin-right: 2px;
     font-size: 20px;
     transform: translateY(5%);
-    position: fixed;
+    position:absolute;
     top: 0%;
     right: 25px;
     cursor: pointer;
