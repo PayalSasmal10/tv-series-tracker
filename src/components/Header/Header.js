@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 
-const Header = ({ serieses, setfilteredValue, setTheme, theme, activated, setActivated}) => {
+const Header = ({ serieses, filteredValue, setfilteredValue, setTheme, theme }) => {
   const [active, setActive] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const input_value = useRef();

@@ -12,7 +12,7 @@ function App() {
   const [serieses, setSerieses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState();
-  const [filteredValue, setfilteredValue] = useState([]);
+  const [filteredValue, setfilteredValue] = useState(serieses);
   const [selectedSeries, setSelectedSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [theme, setTheme] = useState("dark");
@@ -65,7 +65,7 @@ function App() {
           serieses={currentItems}
           setfilteredValue={setfilteredValue}
           setTheme={setTheme}
-          theme={theme}
+          theme={theme}          
         />
       ),
       children: [
@@ -73,7 +73,7 @@ function App() {
           path: "/",
           element: (
             <AvailableSeries
-              serieses={serieses}
+              serieses={currentItems}
               filteredValue={filteredValue}
               itemsPerPage={itemsPerPage}
               totalItems={serieses.length}
