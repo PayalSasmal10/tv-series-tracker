@@ -1,21 +1,12 @@
 import classes from "./Header.module.css";
 import { BsSearch } from "react-icons/bs";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 
-const Header = ({ serieses, filteredValue, setfilteredValue, setTheme, theme }) => {
+const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
   const [active, setActive] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const input_value = useRef();
-
-  // useEffect(() => {
-  //   if (active) input_value.current.textContent = "";
-  // }, [active]);
-
-  // console.log(active);
-
-
 
   const searchButtonHandler = () => {
     setActive(!active);
@@ -25,18 +16,20 @@ const Header = ({ serieses, filteredValue, setfilteredValue, setTheme, theme }) 
     setSearchTerm(event.target.value);
   };
 
-  
+  const inputSearchSeriesHandler = (valueToBeSearched) => {
+    if (valueToBeSearched.trim() !== "") {
+      const data = serieses.filter(fv => {
+        return fv.name.toLowerCase().includes(valueToBeSearched.toLowerCase()) ? fv : "";
+      });
+      setfilteredValue(data);
+    } else if (valueToBeSearched.trim() === "") {
+      setfilteredValue(serieses);
+    }
+  }
 
   useEffect(() => {
-    const searchedValue = serieses.filter((val) => {
-      if (searchTerm === "") {
-        return val;
-      } else if (val.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())){
-          return val;
-      }
-    });
-    setfilteredValue(searchedValue);
-  },[searchTerm, serieses])
+    inputSearchSeriesHandler(searchTerm);
+  }, [searchTerm])
 
 
   const themeHandler = () => {
@@ -58,7 +51,6 @@ const Header = ({ serieses, filteredValue, setfilteredValue, setTheme, theme }) 
       <a className={classes.mode} onClick={themeHandler}> <MdDarkMode /></a>
       <input
         className={active ? classes.input : classes.search}
-        ref={input_value}
         type="text"
         placeholder="Search the TV series"
         onChange={searchHandler}

@@ -1,7 +1,7 @@
 import "./App.css";
 import AvailableSeries from "./components/Series/AvailableSeries";
 import { useEffect, useState } from "react";
-import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/Router/Root";
 import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
 
@@ -15,6 +15,12 @@ function App() {
   const [selectedSeries, setSelectedSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    setfilteredValue(serieses);
+  }, [serieses]);
+
+  console.log("currentPage", currentPage);
 
   useEffect(() => {
     const fetchSeries = async () => {
@@ -34,7 +40,7 @@ function App() {
       setIsLoading(false);
       setHttpError(error.message);
     });
-  }, [serieses]);
+  }, []);
 
   if (isLoading) {
     return <p>Loading.....</p>;
@@ -51,7 +57,7 @@ function App() {
   // Get current items
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = serieses.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredValue.slice(indexOfFirstItem, indexOfLastItem);
 
   //Router creation
   const router = createBrowserRouter([
@@ -59,10 +65,10 @@ function App() {
       path: "/",
       element: (
         <RootLayout
-          serieses={currentItems}
+          serieses={serieses}
           setfilteredValue={setfilteredValue}
           setTheme={setTheme}
-          theme={theme}          
+          theme={theme}
         />
       ),
       children: [
@@ -70,9 +76,9 @@ function App() {
           path: "/",
           element: (
             <AvailableSeries
-              filteredValue={filteredValue}
+              currentItems={currentItems}
               itemsPerPage={itemsPerPage}
-              totalItems={serieses.length}
+              totalItems={filteredValue.length}
               setCurrentPage={setCurrentPage}
               theme={theme}
             />
@@ -84,7 +90,6 @@ function App() {
             <ViewParticularShow
               selectedSeries={selectedSeries}
               setSelectedSeries={setSelectedSeries}
-              
             />
           ),
         },

@@ -15,7 +15,7 @@ const SeriesItems = (props) => {
   return (
     <div className={`${classes.card} ${themeClass}`} >
       <Link to={`/details/${id}`} className={classes.linkCss} >
-      <img src={image?.medium} />
+      <img src={image?.medium} alt={name} />
       <div>
         <h3 className={classes.name}>{name}</h3>
         <div className={classes.seriesitems}>

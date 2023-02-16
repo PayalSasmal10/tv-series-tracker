@@ -1,14 +1,38 @@
+.availableSeries {
+    padding-bottom: 1rem;
+}
+
 .seriesSection{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
+    margin-bottom: 50px;
     /* background-color: #202124; */
 }
 
 .paginationSection {
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
 }
 
 .paginationSection a {
     color: blue;
+}
+
+.footer {
+    width: 100%;
+    padding-top: 0.5rem;
+    background-color: #F99417;
+    position: fixed;
+    bottom: 0;
+}
+
+.waterMark {
+    position: absolute;
+    bottom: 1px;
+    margin: 0 0 0.5rem 0.5rem;
+    color: black;
+}
+
+.waterMark a {
+    color: black !important;
 }
