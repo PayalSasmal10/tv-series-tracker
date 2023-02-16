@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import AvailableSeries from "./components/Series/AvailableSeries";
 import { useEffect, useState } from "react";
@@ -6,8 +5,8 @@ import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/Router/Root";
 import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
 
-
 const itemsPerPage = 12;
+
 function App() {
   const [serieses, setSerieses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,8 +15,6 @@ function App() {
   const [selectedSeries, setSelectedSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [theme, setTheme] = useState("dark");
-
-  console.log(theme);
 
   useEffect(() => {
     const fetchSeries = async () => {
@@ -56,8 +53,6 @@ function App() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = serieses.slice(indexOfFirstItem, indexOfLastItem);
 
-  console.log("filteredValue", filteredValue);
-  console.log("serieses", serieses);
   //Router creation
   const router = createBrowserRouter([
     {

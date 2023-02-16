@@ -4,7 +4,6 @@ import Pagination from "../Pagination/Pagination";
 
 const AvailableSeries = (props) => {
 
-  console.log("props", props.activated);
   const seriesList = props.filteredValue.map((series) => (
     <SeriesItems
       key={series.id}
