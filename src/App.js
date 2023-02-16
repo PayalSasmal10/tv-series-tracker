@@ -12,7 +12,7 @@ function App() {
   const [serieses, setSerieses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState();
-  const [filteredValue, setfilteredValue] = useState(serieses);
+  const [filteredValue, setfilteredValue] = useState([]);
   const [selectedSeries, setSelectedSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [theme, setTheme] = useState("dark");
@@ -37,7 +37,7 @@ function App() {
       setIsLoading(false);
       setHttpError(error.message);
     });
-  }, []);
+  }, [serieses]);
 
   if (isLoading) {
     return <p>Loading.....</p>;
@@ -56,6 +56,8 @@ function App() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = serieses.slice(indexOfFirstItem, indexOfLastItem);
 
+  console.log("filteredValue", filteredValue);
+  console.log("serieses", serieses);
   //Router creation
   const router = createBrowserRouter([
     {
@@ -73,7 +75,6 @@ function App() {
           path: "/",
           element: (
             <AvailableSeries
-              serieses={currentItems}
               filteredValue={filteredValue}
               itemsPerPage={itemsPerPage}
               totalItems={serieses.length}
