@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tv-series-tracker/static/css/main.c2f73654.css",
+    "main.js": "/tv-series-tracker/static/js/main.707cb0bf.js",
+    "static/js/787.da0fb29c.chunk.js": "/tv-series-tracker/static/js/787.da0fb29c.chunk.js",
+    "index.html": "/tv-series-tracker/index.html",
+    "main.c2f73654.css.map": "/tv-series-tracker/static/css/main.c2f73654.css.map",
+    "main.707cb0bf.js.map": "/tv-series-tracker/static/js/main.707cb0bf.js.map",
+    "787.da0fb29c.chunk.js.map": "/tv-series-tracker/static/js/787.da0fb29c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2f73654.css",
+    "static/js/main.707cb0bf.js"
+  ]
+}
