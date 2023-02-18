@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 
 
 const SeriesItems = (props) => {
+  // destructing of props
   const { id, name, year, network, image, followers, language, rating, theme } = props;
   const fetch_year = new Date(year);
   const only_year = fetch_year.getFullYear();
 
-  // console.log(theme);
   const themeClass = theme === "dark" ? classes.darkCard : classes.lightCard;
-
-
+ 
   return (
     <div className={`${classes.card} ${themeClass}`} >
       <Link to={`/details/${id}`} className={classes.linkCss} >
@@ -41,9 +40,7 @@ const SeriesItems = (props) => {
               <p>Country</p>
             </div>
             <div className={`${classes.griditem} ${classes.griditem1}`}>
-            <div className={classes.star} ><BsStarFill /></div> {rating.average}/10
-              {/* <FiMoreHorizontal /> */}
-              
+            <div className={classes.star} ><BsStarFill /></div> {rating.average}/10              
             </div>
           </div>
         </div>

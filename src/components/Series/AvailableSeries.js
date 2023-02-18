@@ -4,7 +4,7 @@ import Pagination from "../Pagination/Pagination";
 import { AiFillHeart } from 'react-icons/ai';
 
 const AvailableSeries = (props) => {
-
+  // props destructuring 
   const { currentItems, currentPage, setCurrentPage, itemsPerPage, totalItems, theme } = props;
 
   const seriesList = currentItems.map((series) => (
@@ -22,11 +22,11 @@ const AvailableSeries = (props) => {
       theme={theme}
     />
   ));
-
+  
+  //handling pagination for changing the page
   const handlePagination = (event) => {
     let currentPage = event.selected + 1;
     setCurrentPage(currentPage);
-    console.log(event);
   }
 
   return (
@@ -42,7 +42,7 @@ const AvailableSeries = (props) => {
           className={classes.paginationSection}
           currentPage={currentPage}
         />
-        <div className={classes.waterMark}>Made with <AiFillHeart style={{color: "red"}} /> by <a href="">Payal Sasmal</a></div>
+        <div className={classes.waterMark}>Made with <AiFillHeart style={{color: "red"}} /> by <a href="https://twitter.com/payalsasmal">Payal Sasmal</a></div>
       </div>
     </div>
   );

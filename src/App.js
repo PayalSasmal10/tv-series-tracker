@@ -8,6 +8,7 @@ import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
 const itemsPerPage = 12;
 
 function App() {
+  // Managing states
   const [serieses, setSerieses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState();
@@ -16,12 +17,12 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [theme, setTheme] = useState("dark");
 
+  // Loading filtered value
   useEffect(() => {
     setfilteredValue(serieses);
   }, [serieses]);
 
-  console.log("currentPage", currentPage);
-
+// Fetching data from API
   useEffect(() => {
     const fetchSeries = async () => {
       const response = await fetch("https://api.tvmaze.com/shows");
@@ -43,7 +44,7 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <p>Loading.....</p>;
+    return <div className={`ring`}>Loading</div>;
   }
 
   if (httpError) {

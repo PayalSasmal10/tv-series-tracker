@@ -1,7 +1,5 @@
 .card {
-    /* box-shadow: 0 4px 8px 0 rgba(241, 250, 252, 0.2); */
     border-radius: 5px;
-    /* width: 20%; */
     min-width: 20%;
     text-align: center;
     display: block;
@@ -35,7 +33,6 @@
 
 .name {
     font-family: "Cursive", "Lucida console";
-    /* color: #f3f8fa; */
     padding-top: 12px;
 }
 
@@ -57,12 +54,6 @@
     box-shadow: 1px rgb(130, 215, 243);
     
 }
-
-
-/* p {
-padding: 10px;
-border: 1px solid black;
-} */
 
 .griditem1 {
     border-right: none;

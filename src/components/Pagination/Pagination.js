@@ -21,7 +21,6 @@ const Pagination = ({ itemsPerPage, totalItems, handlePagination, className, cur
         breakClassName={"page-item"}
         breakLinkClassName={"page-link"}
         activeClassName={"active"}
-        // onPageActive={"active"}
         className={`pagination justify-content-center ${className}`}
       />
   );

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 
 const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
+  // state management
   const [active, setActive] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -12,10 +13,12 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
     setActive(!active);
   };
 
+  // search state handler
   const searchHandler = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // taking input from input field
   const inputSearchSeriesHandler = (valueToBeSearched) => {
     if (valueToBeSearched.trim() !== "") {
       const data = serieses.filter(fv => {
@@ -27,11 +30,13 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
     }
   }
 
+  // call search input handler
   useEffect(() => {
     inputSearchSeriesHandler(searchTerm);
   }, [searchTerm])
 
 
+  // THeme  handler
   const themeHandler = () => {
     if (theme === "light"){
       setTheme("dark");

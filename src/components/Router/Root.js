@@ -1,3 +1,4 @@
+// This page is introduced because router has changed after v6.4.
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 

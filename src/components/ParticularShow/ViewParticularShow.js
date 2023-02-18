@@ -56,7 +56,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
         <h1 className={classes.focusdetails}>Show Info</h1>
         <div className={classes.focusdetails}>
           <span className={classes.genre}>Network: </span>
-          <a href={network?.officialSite}>{network?.name}</a>
+          <a href={network?.officialSite} className={`${theme} === "light" ? ${classes.officialSiteA} : ''`}>{network?.name}</a>
         </div>
         <div className={classes.focusdetails}>
           <span className={classes.genre}>Schedule: </span>
@@ -83,7 +83,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
         </div>
         <div className={classes.focusdetails}>
           <span className={classes.genre}>Official site : </span>
-          <a href={officialSite}>{officialSite}</a>
+          <a href={officialSite} className={`${theme} === "light" ? ${classes.officialSiteA} : ''`}>{officialSite}</a>
         </div>
       </div>
       
