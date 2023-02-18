@@ -46,7 +46,9 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
 
   return (
     <div className={classes.details} key={id}>
-      <div className={` ${classes.imgCard} ${theme} === "dark" ? ${classes.darkImgCard} : ${classes.lightImgCard}`}>
+      <div
+        className={` ${classes.imgCard} ${theme} === "dark" ? ${classes.darkImgCard} : ${classes.lightImgCard}`}
+      >
         <img className={classes.img} src={image?.original} />
       </div>
       <div className={classes.focusdetails}>
@@ -56,7 +58,12 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
         <h1 className={classes.focusdetails}>Show Info</h1>
         <div className={classes.focusdetails}>
           <span className={classes.genre}>Network: </span>
-          <a href={network?.officialSite} className={`${theme} === "light" ? ${classes.officialSiteA} : ''`}>{network?.name}</a>
+          <a
+            href={network?.officialSite}
+            className={`${theme} === "light" ? ${classes.officialSiteA} : ''`}
+          >
+            {network?.name}
+          </a>
         </div>
         <div className={classes.focusdetails}>
           <span className={classes.genre}>Schedule: </span>
@@ -83,12 +90,16 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
         </div>
         <div className={classes.focusdetails}>
           <span className={classes.genre}>Official site : </span>
-          <a href={officialSite} className={`${theme} === "light" ? ${classes.officialSiteA} : ''`}>{officialSite}</a>
+          <a
+            href={officialSite}
+            className={`${theme} === "light" ? ${classes.officialSiteA} : ''`}
+            target= {`_blank`}
+          >
+            {officialSite}
+          </a>
         </div>
       </div>
-      
     </div>
-
   );
 };
 
