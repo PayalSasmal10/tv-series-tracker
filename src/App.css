@@ -31,5 +31,9 @@
 } */
 .page-link {
   color: #f3f8fa !important;
-  background-color: #F99417 !important;
+  background-color: #A61F69 !important;
+}
+
+.page-item.active a{
+  background-color: rgb(135, 112, 127) !important;
 }

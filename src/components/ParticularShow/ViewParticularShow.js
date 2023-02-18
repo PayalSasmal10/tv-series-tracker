@@ -4,6 +4,7 @@ import classes from "./ViewParticularShow.module.css";
 
 const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
   const {
+    id,
     network,
     image,
     status,
@@ -44,7 +45,7 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
   }
 
   return (
-    <div className={classes.details}>
+    <div className={classes.details} key={id}>
       <div className={` ${classes.imgCard} ${theme} === "dark" ? ${classes.darkImgCard} : ${classes.lightImgCard}`}>
         <img className={classes.img} src={image?.original} />
       </div>
@@ -85,7 +86,9 @@ const ViewParticularShow = ({ selectedSeries, setSelectedSeries, theme }) => {
           <a href={officialSite}>{officialSite}</a>
         </div>
       </div>
+      
     </div>
+
   );
 };
 

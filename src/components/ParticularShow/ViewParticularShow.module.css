@@ -90,7 +90,7 @@
   padding: 50px;
 }
 
-@media screen and (min-width: 1134px) {
+@media screen and (min-width: 1235px) {
   .details {
     flex-direction: row;
     justify-content: start;

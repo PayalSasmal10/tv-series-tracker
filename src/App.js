@@ -79,6 +79,7 @@ function App() {
               currentItems={currentItems}
               itemsPerPage={itemsPerPage}
               totalItems={filteredValue.length}
+              currentPage={currentPage}
               setCurrentPage={setCurrentPage}
               theme={theme}
             />

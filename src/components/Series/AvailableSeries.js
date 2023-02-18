@@ -5,7 +5,9 @@ import { AiFillHeart } from 'react-icons/ai';
 
 const AvailableSeries = (props) => {
 
-  const seriesList = props.currentItems.map((series) => (
+  const { currentItems, currentPage, setCurrentPage, itemsPerPage, totalItems, theme } = props;
+
+  const seriesList = currentItems.map((series) => (
     <SeriesItems
       key={series.id}
       id={series.id}
@@ -17,13 +19,14 @@ const AvailableSeries = (props) => {
       language={series.language}
       rating={series.rating}
       setSelectedSeries={props.setSelectedSeries}
-      theme={props.theme}
+      theme={theme}
     />
   ));
 
   const handlePagination = (event) => {
-    let currentPge = event.selected + 1
-    props.setCurrentPage(currentPge);
+    let currentPage = event.selected + 1;
+    setCurrentPage(currentPage);
+    console.log(event);
   }
 
   return (
@@ -33,10 +36,11 @@ const AvailableSeries = (props) => {
       </section>
       <div className={classes.footer}>
         <Pagination 
-          itemsPerPage={props.itemsPerPage} 
-          totalItems={props.totalItems} 
+          itemsPerPage={itemsPerPage} 
+          totalItems={totalItems} 
           handlePagination={handlePagination}
           className={classes.paginationSection}
+          currentPage={currentPage}
         />
         <div className={classes.waterMark}>Made with <AiFillHeart style={{color: "red"}} /> by <a href="">Payal Sasmal</a></div>
       </div>

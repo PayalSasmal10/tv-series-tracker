@@ -1,11 +1,12 @@
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ itemsPerPage, totalItems, handlePagination, className  }) => {
+const Pagination = ({ itemsPerPage, totalItems, handlePagination, className, currentPage }) => {
   return (
       <ReactPaginate
         previousLabel={"<<"}
         nextLabel={">>"}
         breakLabel={"..."}
+        forcePage={currentPage-1}
         pageCount={Math.ceil(totalItems / itemsPerPage)}
         marginPagesDisplayed={2}
         pageRangeDisplayed={3}
@@ -20,6 +21,7 @@ const Pagination = ({ itemsPerPage, totalItems, handlePagination, className  }) 
         breakClassName={"page-item"}
         breakLinkClassName={"page-link"}
         activeClassName={"active"}
+        // onPageActive={"active"}
         className={`pagination justify-content-center ${className}`}
       />
   );
