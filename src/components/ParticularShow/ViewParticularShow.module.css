@@ -107,7 +107,7 @@
 /* Image setup */
 .imgCard {
   border-radius: 5px;
-  min-width: 24%;
+  min-width: 21%;
   height: 55vh; 
   text-align: center;
   display: block;
