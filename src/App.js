@@ -1,7 +1,7 @@
 import "./App.css";
 import AvailableSeries from "./components/Series/AvailableSeries";
 import { useEffect, useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import RootLayout from "./components/Router/Root";
 import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
 
@@ -61,7 +61,7 @@ function App() {
   const currentItems = filteredValue.slice(indexOfFirstItem, indexOfLastItem);
 
   //Router creation
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: (
