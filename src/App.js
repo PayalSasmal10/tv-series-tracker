@@ -101,9 +101,7 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
-      <div>
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </div>
   );
 }
