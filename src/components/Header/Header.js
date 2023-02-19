@@ -52,7 +52,7 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
       <Link className={classes.home} to="/">
         Home
       </Link>
-      <a href="#about">About</a>
+      {/* <a href="#about">About</a> */}
       <a className={classes.mode} onClick={themeHandler}> <MdDarkMode /></a>
       <input
         className={active ? classes.input : classes.search}
