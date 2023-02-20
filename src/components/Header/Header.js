@@ -23,7 +23,6 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme, setCurrentPage })
     setCurrentPage(1);
     if (valueToBeSearched.trim() !== "") {
       const data = serieses.filter(fv => {
-        console.log(fv.name.toLowerCase().includes(valueToBeSearched.toLowerCase()));
         return fv.name.toLowerCase().includes(valueToBeSearched.toLowerCase()) ? fv : "";
       });
       setfilteredValue(data);
