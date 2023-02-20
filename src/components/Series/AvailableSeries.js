@@ -25,8 +25,8 @@ const AvailableSeries = (props) => {
   
   //handling pagination for changing the page
   const handlePagination = (event) => {
-    let currentPage = event.selected + 1;
-    setCurrentPage(currentPage);
+    let currentPge = event.selected + 1;
+    setCurrentPage(currentPge);
   }
 
   return (

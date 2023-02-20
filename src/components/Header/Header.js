@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 
-const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
+const Header = ({ serieses, setfilteredValue, setTheme, theme, setCurrentPage }) => {
   // state management
   const [active, setActive] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,11 +17,13 @@ const Header = ({ serieses, setfilteredValue, setTheme, theme }) => {
   const searchHandler = (event) => {
     setSearchTerm(event.target.value);
   };
-
+  
   // taking input from input field
   const inputSearchSeriesHandler = (valueToBeSearched) => {
+    setCurrentPage(1);
     if (valueToBeSearched.trim() !== "") {
       const data = serieses.filter(fv => {
+        console.log(fv.name.toLowerCase().includes(valueToBeSearched.toLowerCase()));
         return fv.name.toLowerCase().includes(valueToBeSearched.toLowerCase()) ? fv : "";
       });
       setfilteredValue(data);

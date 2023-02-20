@@ -2,7 +2,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 
-const RootLayout = ({ serieses, setfilteredValue, setTheme, theme }) => {
+const RootLayout = ({ serieses, setfilteredValue, setTheme, theme, setCurrentPage }) => {
   return (
     <>
       <Header
@@ -10,6 +10,7 @@ const RootLayout = ({ serieses, setfilteredValue, setTheme, theme }) => {
         setfilteredValue={setfilteredValue}
         setTheme={setTheme}
         theme={theme}
+        setCurrentPage={setCurrentPage}
       />
       <Outlet />
     </>

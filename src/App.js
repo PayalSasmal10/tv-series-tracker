@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RouterProvider, createHashRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter, createBrowserRouter } from "react-router-dom";
 import AvailableSeries from "./components/Series/AvailableSeries";
 import RootLayout from "./components/Router/Root";
 import ViewParticularShow from "./components/ParticularShow/ViewParticularShow";
@@ -23,10 +23,6 @@ function App() {
     favicon.setAttribute('href', icon);
   }, []);
 
-  // Loading filtered value
-  useEffect(() => {
-    setfilteredValue(serieses);
-  }, [serieses]);
 
 // Fetching data from API
   useEffect(() => {
@@ -48,6 +44,11 @@ function App() {
       setHttpError(error.message);
     });
   }, []);
+
+   // Loading filtered value
+  useEffect(() => {
+    setfilteredValue(serieses);
+  }, [serieses]);
 
   if (isLoading) {
     return <div className={`ring`}>Loading</div>;
@@ -76,6 +77,7 @@ function App() {
           setfilteredValue={setfilteredValue}
           setTheme={setTheme}
           theme={theme}
+          setCurrentPage={setCurrentPage}
         />
       ),
       children: [
